@@ -1,6 +1,6 @@
 package pizzahome;
 
-public class SlicedPepperoni implements Pepperoni {
+public class SlicedPepperoni extends Custom {
 
 	
 	public void print() {

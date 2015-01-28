@@ -60,23 +60,23 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
 			toppingNY.add(new Spinach());
 		  	 	System.out.println("add Spinach");
 	
+		break;			
+		case "mozzarella": 
+			toppingNY.add(new Mozzarella());
+		  	 	System.out.println("add Mozzarella");
+	
 		break;		
+		case "pepperoni": 
+			toppingNY.add(new SlicedPepperoni());
+		  	 	System.out.println("add Sliced Pepperoni");
+	
+		break;	
 		default: System.out.println("No such choice");
 		}
 		
 		
 		return toppingNY;
 	}
-	/*public Custom[] createCustom() {
-		
-		Custom custom[] = {new Garlic(), new Onion(), new Mushroom(), new Mozzarella()};
-		
-		return custom;
-	}*/
-
-	
-
-	
 	
 	
 

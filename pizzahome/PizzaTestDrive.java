@@ -4,12 +4,14 @@ package pizzahome;
 
 public class PizzaTestDrive {	
 	
+	
 	public static void main(String[] args) {
 				
 		
-		PizzaStore nyStore = new NYPizzaStore();						
-		Pizza pizza = nyStore.orderPizza("custom");			
+		PizzaStore nyStore = new NYPizzaStore();	
 		
+		Pizza pizza = nyStore.orderPizza("custom");			
+	
 		System.out.println("Ingredints : " + pizza.getName() + " :");
 		pizza.dough.print();
 		pizza.sauce.print();
@@ -36,9 +38,6 @@ public class PizzaTestDrive {
 	
 		
 		
-		/*pizza = chicagoStore.orderPizza("custom");
-		
-		System.out.println("Joel ordered a " + pizza.getName() + "\n");*/		
 		
 		
 	}
