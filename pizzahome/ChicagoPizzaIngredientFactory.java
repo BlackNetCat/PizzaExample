@@ -1,5 +1,7 @@
 package pizzahome;
 
+import java.util.ArrayList;
+
 public class ChicagoPizzaIngredientFactory implements PizzaIngredientFactory {
 
 	@Override
@@ -37,8 +39,14 @@ public class ChicagoPizzaIngredientFactory implements PizzaIngredientFactory {
 		return new FrozenClams();
 	}
 
+	/*@Override
+	public Custom[] createCustom() {
+		// TODO Auto-generated method stub
+		return null;
+	}*/
+
 	@Override
-	public Custom createCustom() {
+	public ArrayList createCustom(String item) {
 		// TODO Auto-generated method stub
 		return null;
 	}

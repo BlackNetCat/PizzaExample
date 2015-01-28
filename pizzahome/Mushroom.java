@@ -1,6 +1,6 @@
 package pizzahome;
 
-public class Mushroom implements Veggies {
+public class Mushroom extends Custom {
 
 	
 	public void print() {

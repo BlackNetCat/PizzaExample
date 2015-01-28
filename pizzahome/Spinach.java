@@ -1,6 +1,6 @@
 package pizzahome;
 
-public class Spinach implements Veggies {
+public class Spinach extends Custom {
 
 	@Override
 	public void print() {

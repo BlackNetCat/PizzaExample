@@ -1,6 +1,6 @@
 package pizzahome;
 
-public class RedPepper implements Veggies {
+public class RedPepper extends Custom {
 
 	@Override
 	public void print() {

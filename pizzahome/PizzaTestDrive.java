@@ -1,21 +1,13 @@
 package pizzahome;
 
-import java.util.ArrayList;
 
-public class PizzaTestDrive {
 
-	
-	
-	
-	
+public class PizzaTestDrive {	
 	
 	public static void main(String[] args) {
-		
-		
-		
-		PizzaStore nyStore = new NYPizzaStore();		
-		PizzaStore chicagoStore = new ChicagoPizzaStore();
 				
+		
+		PizzaStore nyStore = new NYPizzaStore();						
 		Pizza pizza = nyStore.orderPizza("custom");			
 		
 		System.out.println("Ingredints : " + pizza.getName() + " :");
@@ -34,8 +26,8 @@ public class PizzaTestDrive {
 			}
 		}
 		if (pizza.custom != null) {
-			for (int i = 0; i < pizza.custom.length; i++){
-				pizza.custom[i].print();
+			for (int i = 0; i < pizza.custom.size(); i++){
+				pizza.custom.get(i).print();
 			}
 		}
 		
@@ -46,11 +38,7 @@ public class PizzaTestDrive {
 		
 		/*pizza = chicagoStore.orderPizza("custom");
 		
-		System.out.println("Joel ordered a " + pizza.getName() + "\n");*/
-		
-		
-		
-		
+		System.out.println("Joel ordered a " + pizza.getName() + "\n");*/		
 		
 		
 	}

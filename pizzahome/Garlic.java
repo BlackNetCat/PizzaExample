@@ -1,6 +1,6 @@
 package pizzahome;
 
-public class Garlic implements Veggies {
+public class Garlic extends Custom  {
 	
 	public void print() {
 		System.out.println("Garlik");

@@ -1,6 +1,10 @@
 package pizzahome;
 
+import java.util.ArrayList;
+
 public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
+	
+	ArrayList<Custom> toppingNY = new ArrayList<Custom>();
 
 	@Override
 	public Dough createDough() {
@@ -38,13 +42,41 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
 	}
 
 	@Override
-	public Custom createCustom() {
+	public ArrayList createCustom(String item){
 		
+		switch(item) {
+		case "garlic": 
+			toppingNY.add(new Garlic());
+				System.out.println("add Garlic");
+				
+		
+		break;
+		case "onion": 
+			toppingNY.add(new Onion());
+		  	 	System.out.println("add Onion");
 	
+		break;		
+		case "spinach": 
+			toppingNY.add(new Spinach());
+		  	 	System.out.println("add Spinach");
+	
+		break;		
+		default: System.out.println("No such choice");
+		}
 		
-		return null;
+		
+		return toppingNY;
 	}
+	/*public Custom[] createCustom() {
+		
+		Custom custom[] = {new Garlic(), new Onion(), new Mushroom(), new Mozzarella()};
+		
+		return custom;
+	}*/
 
+	
+
+	
 	
 	
 

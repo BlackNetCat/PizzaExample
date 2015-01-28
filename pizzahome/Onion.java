@@ -1,6 +1,6 @@
 package pizzahome;
 
-public class Onion implements Veggies {
+public class Onion extends Custom {
 
 	
 	public void print() {
