@@ -37,4 +37,12 @@ public class ChicagoPizzaIngredientFactory implements PizzaIngredientFactory {
 		return new FrozenClams();
 	}
 
+	@Override
+	public Custom createCustom() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
 }

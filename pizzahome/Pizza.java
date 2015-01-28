@@ -11,7 +11,8 @@ public abstract class Pizza {
 	Cheese cheese;
 	Clams clam;
 	Pepperoni pepperoni;
-	//ArrayList toppings = new ArrayList();
+	Custom custom[];
+	
 	
 	abstract void prepare(); 
 	  /* {

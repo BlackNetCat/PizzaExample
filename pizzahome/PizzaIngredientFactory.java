@@ -8,5 +8,7 @@ public interface PizzaIngredientFactory {
 	public Veggies[] createVeggies();
 	public Clams createClam();
 	public Pepperoni createPepperoni();
+	public Custom createCustom();
+	
 
 }
