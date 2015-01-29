@@ -5,6 +5,7 @@ public class NYPizzaStore extends PizzaStore {
 	protected Pizza createPizza(String item) {
 		Pizza pizza = null;
 		PizzaIngredientFactory ingredientFactory = new NYPizzaIngredientFactory();
+		
 		if (item.equals("cheese")){
 			pizza = new CheesePizza(ingredientFactory);
 			pizza.setname("New York Style Cheese Pizza");		
@@ -16,11 +17,29 @@ public class NYPizzaStore extends PizzaStore {
 			pizza.setname("New York Style Clam Pizza");
 		}else if (item.equals("pepperoni")){
 			pizza = new PepperoniPizza(ingredientFactory);
-			pizza.setname("New York Style Pepperoni Pizza");		
-		}else if (item.equals("custom")){
+			pizza.setname("New York Style Pepperoni Pizza");
+		}
+		/*else if (item.equals("custom")){
 			pizza = new CustomPizza(ingredientFactory);
 			pizza.setname("New York Style Custom Pizza");		
+		}*/
+		else {
+			pizza = new CustomPizza(ingredientFactory);
+			pizza.setname("New York Style Custom Pizza");
 		}
 		return pizza;
 	}
+
+	@Override
+	Pizza createPizza(String [] string) {
+		
+		Pizza pizza = null;
+		PizzaIngredientFactory ingredientFactory = new NYPizzaIngredientFactory();
+		
+		pizza = new CustomPizza(ingredientFactory, string);
+		pizza.setname("New York Style Custom Pizza");
+		return pizza;
+	}
+	
+	
 }

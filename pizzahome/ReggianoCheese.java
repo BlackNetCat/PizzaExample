@@ -1,6 +1,6 @@
 package pizzahome;
 
-public class ReggianoCheese implements Cheese {
+public class ReggianoCheese extends Custom {
 
 	@Override
 	public void print() {

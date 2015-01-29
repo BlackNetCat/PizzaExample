@@ -1,5 +1,11 @@
 package pizzahome;
 
-public class FrozenClams implements Clams {
+public class FrozenClams extends Custom {
+
+	@Override
+	public void print() {
+		System.out.println("FrozenClams");
+		
+	}
 
 }

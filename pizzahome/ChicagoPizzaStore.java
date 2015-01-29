@@ -24,6 +24,16 @@ public class ChicagoPizzaStore extends PizzaStore {
 	}
 		return pizza;
 	}
+
+	@Override
+	Pizza createPizza(String [] string) {
+		Pizza pizza = null;
+		PizzaIngredientFactory ingredientFactory = new ChicagoPizzaIngredientFactory();
+		
+		pizza = new CustomPizza(ingredientFactory, string);
+		pizza.setname("Chicago Style Custom Pizza");
+		return pizza;
+	}
 	
 
 }

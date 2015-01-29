@@ -1,6 +1,6 @@
 package pizzahome;
 
-public class BlackOlives implements Veggies {
+public class BlackOlives extends Custom {
 
 	
 	public void print() {

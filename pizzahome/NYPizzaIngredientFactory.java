@@ -61,9 +61,9 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
 		  	 	System.out.println("add Spinach");
 	
 		break;			
-		case "mozzarella": 
-			toppingNY.add(new Mozzarella());
-		  	 	System.out.println("add Mozzarella");
+		case "cheese": 
+			toppingNY.add(new ReggianoCheese());
+		  	 	System.out.println("add Reggiano Cheese");
 	
 		break;		
 		case "pepperoni": 
