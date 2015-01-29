@@ -2,6 +2,6 @@ package pizzahome;
 
 public interface Cheese {
 	
-	void print();
+	void print();    //
 
 }
