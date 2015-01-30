@@ -1,5 +1,7 @@
 package pizzahome;
 
+import java.awt.EventQueue;
+
 
 
 public class PizzaTestDrive {	
@@ -96,15 +98,32 @@ public class PizzaTestDrive {
 	
 	public static void main(String[] args) {
 		
-		String [] toppingsForCustomPizza = {"onion", "cheese", "garlic", "pepperoni"};
+		String [] toppingsForCustomPizza = {"cheese", "cheese", "garlic", "pepperoni"};
 				
 	//	orderRegularNY("veggie");	
 	//	orderRegularChicago("clam");
 		
-	orderCustomNY(toppingsForCustomPizza);	
-	orderCustomChicago(toppingsForCustomPizza);
-		
-		
+		orderCustomNY(toppingsForCustomPizza);	
+		orderCustomChicago(toppingsForCustomPizza);
+			
+	
+		EventQueue.invokeLater(new Runnable() {
+		public void run() {
+			try {
+				View window = new View();
+				
+				window.frame.setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		});
+	
+			
 	}
+	
+	
+		
+	
 
 }
