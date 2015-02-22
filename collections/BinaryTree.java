@@ -2,6 +2,7 @@ package collections;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 class Item{
@@ -67,19 +68,25 @@ public class BinaryTree {
 		return false;
 	}
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args){
 		
 		BinaryTree dicEngRus = new BinaryTree();
 		String Eng;
 		String Rus;
-		Scanner sc = new Scanner(new File("C:\\1.txt"));
+		Scanner sc = null;
+		try {
+			sc = new Scanner(new File("C:\\f\\1.txt"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		while (sc.hasNext()){
 			Eng = sc.next();
 			Rus = sc.next();
 			dicEngRus.add(new Word(Eng,Rus));
 		}
-		System.out.println(dicEngRus.find("train").EngRus.valueRus);
+		System.out.println(dicEngRus.find("ccc").EngRus.valueRus);
 	}
 
 }
