@@ -21,26 +21,26 @@ public class Server {
 		juelvern.setBooksCode(juelBookCode);
 		juelBookCode.add(01);   
 	   
-     int port = 8080; // случайный порт (может быть любое число от 1025 до 65535)
+     int port = 8080; // СЃР»СѓС‡Р°Р№РЅС‹Р№ РїРѕСЂС‚ (РјРѕР¶РµС‚ Р±С‹С‚СЊ Р»СЋР±РѕРµ С‡РёСЃР»Рѕ РѕС‚ 1025 РґРѕ 65535)
        try {
-         ServerSocket ss = new ServerSocket(port); // создаем сокет сервера и привязываем его к вышеуказанному порту
+         ServerSocket ss = new ServerSocket(port); // СЃРѕР·РґР°РµРј СЃРѕРєРµС‚ СЃРµСЂРІРµСЂР° Рё РїСЂРёРІСЏР·С‹РІР°РµРј РµРіРѕ Рє РІС‹С€РµСѓРєР°Р·Р°РЅРЅРѕРјСѓ РїРѕСЂС‚Сѓ
          System.out.println("Waiting for a client...");
 
-         Socket socket = ss.accept(); // заставляем сервер ждать подключений и выводим сообщение когда кто-то связался с сервером
+         Socket socket = ss.accept(); // Р·Р°СЃС‚Р°РІР»СЏРµРј СЃРµСЂРІРµСЂ Р¶РґР°С‚СЊ РїРѕРґРєР»СЋС‡РµРЅРёР№ Рё РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ РєРѕРіРґР° РєС‚Рѕ-С‚Рѕ СЃРІСЏР·Р°Р»СЃСЏ СЃ СЃРµСЂРІРµСЂРѕРј
          System.out.println("Got a client");
          System.out.println();
 
- // Берем входной и выходной потоки сокета, теперь можем получать и отсылать данные клиенту. 
+ // Р‘РµСЂРµРј РІС…РѕРґРЅРѕР№ Рё РІС‹С…РѕРґРЅРѕР№ РїРѕС‚РѕРєРё СЃРѕРєРµС‚Р°, С‚РµРїРµСЂСЊ РјРѕР¶РµРј РїРѕР»СѓС‡Р°С‚СЊ Рё РѕС‚СЃС‹Р»Р°С‚СЊ РґР°РЅРЅС‹Рµ РєР»РёРµРЅС‚Сѓ. 
          InputStream sin = socket.getInputStream();
          OutputStream sout = socket.getOutputStream();
 
- // Конвертируем потоки в другой тип, чтоб легче обрабатывать текстовые сообщения.
+ // РљРѕРЅРІРµСЂС‚РёСЂСѓРµРј РїРѕС‚РѕРєРё РІ РґСЂСѓРіРѕР№ С‚РёРї, С‡С‚РѕР± Р»РµРіС‡Рµ РѕР±СЂР°Р±Р°С‚С‹РІР°С‚СЊ С‚РµРєСЃС‚РѕРІС‹Рµ СЃРѕРѕР±С‰РµРЅРёСЏ.
          DataInputStream in = new DataInputStream(sin);
          DataOutputStream out = new DataOutputStream(sout);
 
          String line = null;
          while(true) {
-           line = in.readUTF(); // ожидаем пока клиент пришлет строку текста.
+           line = in.readUTF(); // РѕР¶РёРґР°РµРј РїРѕРєР° РєР»РёРµРЅС‚ РїСЂРёС€Р»РµС‚ СЃС‚СЂРѕРєСѓ С‚РµРєСЃС‚Р°.
            System.out.println("client just sent me this : " + line);
            if (line.contains("mush")){
         	  
@@ -49,17 +49,17 @@ public class Server {
            
            if (line.contains("island")){
          	  
-        	   out.writeUTF(island.getName() + " by " + island.getAuthor().firstName + " " + island.getAuthor().secondName ); // отсылаем клиенту обратно автора
+        	   out.writeUTF(island.getName() + " by " + island.getAuthor().firstName + " " + island.getAuthor().secondName ); // РѕС‚СЃС‹Р»Р°РµРј РєР»РёРµРЅС‚Сѓ РѕР±СЂР°С‚РЅРѕ Р°РІС‚РѕСЂР°
         	 //  System.out.println(island.getName());
            }
            
            else {
-        	   out.writeUTF(line + " not found"); // отсылаем клиенту обратно ту самую строку текста.
+        	   out.writeUTF(line + " not found"); // РѕС‚СЃС‹Р»Р°РµРј РєР»РёРµРЅС‚Сѓ РѕР±СЂР°С‚РЅРѕ С‚Сѓ СЃР°РјСѓСЋ СЃС‚СЂРѕРєСѓ С‚РµРєСЃС‚Р°.
            }
            
       //     System.out.println("I'm sending it back...");
            
-           out.flush(); // заставляем поток закончить передачу данных.
+           out.flush(); // Р·Р°СЃС‚Р°РІР»СЏРµРј РїРѕС‚РѕРє Р·Р°РєРѕРЅС‡РёС‚СЊ РїРµСЂРµРґР°С‡Сѓ РґР°РЅРЅС‹С….
            System.out.println("Waiting for the next line...");
            System.out.println();
          }
